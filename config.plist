@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>BaseURL</key><string>https://93j0vgf7dsw266o.xyz</string>
+<key>Timeout</key><real>5</real>
+<key>ExpectedStatus</key><integer>200</integer>
+</dict></plist>

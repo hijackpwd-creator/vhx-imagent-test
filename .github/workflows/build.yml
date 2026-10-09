@@ -1,0 +1,25 @@
+name: Build imagent NSURLSession Test
+on:
+  workflow_dispatch:
+  push:
+    paths: ['Test.m', 'Filter.plist', 'build.sh', 'packaging/**', '.github/workflows/build.yml']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15-intel
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: brew install ldid dpkg
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: '1'
+      - run: bash build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vhx-imagent-test-rootless
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
